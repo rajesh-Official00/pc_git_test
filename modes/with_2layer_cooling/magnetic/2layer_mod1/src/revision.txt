@@ -1,0 +1,3 @@
+Revision: f3b146fca
+ M bin/gitci_run
+ M samples/helical-MHDturb/idl/generate_kvectors.pro
