@@ -1,0 +1,28 @@
+!  -*-f90-*-  (for Emacs)    vim:set filetype=fortran:  (for vim)
+!
+! Convection in vertically stratified atmosphere/solar convection zone
+! Initialisation parameters
+!
+&init_pars
+  cvsid="3e0a6e7bd"
+  lperi =  T ,   T ,   F        ! periodic direction?
+  bcz = 's','s','a','a2','a2'
+  xyz0=-12.56637,-12.56637,-2.6180
+  xyz1=+12.56637,+12.56637,+0.5236
+  lwrite_aux=T                  ! write out auxiliary variables
+  lnoghost_strati=T
+/
+&eos_init_pars
+/
+&hydro_init_pars
+/
+!&magnetic_init_pars
+!/
+&density_init_pars
+  initlnrho='stratification'
+/
+&grav_init_pars
+  gravz_profile='const', gravz=-1.
+/
+&entropy_init_pars
+/
