@@ -1,0 +1,4 @@
+Revision: a24a9d93c
+ M bin/gitci_run
+ M samples/helical-MHDturb/idl/generate_kvectors.pro
+ M samples/helical-MHDturb/k.dat
