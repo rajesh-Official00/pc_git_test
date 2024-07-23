@@ -1,0 +1,37 @@
+!                                  -*-f90-*-
+! Initialisation parameters
+!
+&init_pars
+  lperi=T,T,F
+  !bcz = 's','s','a','a2','cT'
+  !bcz = 's','s','a','a2','a','a','s'
+  bcz = 's','s','a','s','cT','a','a','s'
+  xyz0 = -8., -8., -2.82743  !-9Lz/10 is bottom
+  Lxyz = 16., 16., 3.14159 
+  !lnoghost_strati=T
+/
+&eos_init_pars
+ !gamma=1.
+  cs0=1.
+  rho0=1.
+/
+&hydro_init_pars
+/
+&density_init_pars
+  !initlnrho='isothermal'
+  !initlnrho='stratification'
+  initlnrho='polytropic_simple'
+/
+&grav_init_pars
+  !gravz_profile='const', gravz=-1.
+  gravz_profile='const', gravz=-1.0
+  zinfty=5
+/
+&magnetic_init_pars
+  !initaa='gaussian-noise', amplaa=1e-5
+  initaa='gaussian-noise', amplaa=2e-5
+/
+&entropy_init_pars
+  initss='polytropic_simple'
+  mpoly0=1.5
+/
