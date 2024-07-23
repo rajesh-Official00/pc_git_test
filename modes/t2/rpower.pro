@@ -1,0 +1,39 @@
+default,ir1st,1
+if ir1st eq 1 then begin
+ pc_power_xy,var1,var2,lint_shell=0,v1='uz_xy',obj=obj
+ spec1=reform(obj.spec1)
+ s=size(spec1)
+ nk=s[1]
+ t=obj.tt
+endif
+ir1st=0
+@input
+default,tmin,300.
+default,tmax,max(t)
+gd=where(t gt tmin and t lt tmax)
+tt=t[gd]
+nt=n_elements(tt)
+spec=spec1(*,gd)
+fko=fft(spec,-1,dim=2)
+k=findgen(nk)/4.
+;
+dt=(max(tt)-min(tt))/(nt-1)
+print,dt
+dt=tt[1]-tt[0]
+print,dt
+Ttot=dt*nt
+dom=2.*!pi/Ttot
+om=findgen(nt)*dom
+iom=where(om le max(k))
+oom=om[iom]
+;
+;sfko=alog(abs(fko)^2.)
+sfko=abs(fko)
+sfko=sfko[*,iom]
+print,'minmax(sfko)=',minmax(sfko)
+default,lev1,min(sfko)+12.
+default,lev2,max(sfko)-3.
+lev=grange(lev1,lev2,21)
+contour,clip(alog10(sfko),minmax(lev)),k,oom,/fil,lev=lev,yr=[0,5],xr=[0,10]
+save,file='ko_dia.sav',sfko,k,oom
+END

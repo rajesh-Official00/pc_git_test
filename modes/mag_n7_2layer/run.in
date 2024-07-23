@@ -1,0 +1,32 @@
+&run_pars
+  tmax=1500., it1=150, cdt=0.6, isave=100, itorder=3
+  !nt=100000000, it1=40, cdt=0.6, isave=100, itorder=3
+  dsnap=100., dvid=0.4, it1d=200, d2davg=0.4
+  slice_position='c', zbot_slice=-3., ztop_slice=0.
+/
+&eos_run_pars
+/
+&hydro_run_pars
+  lupw_uu=T
+/
+&density_run_pars
+  lupw_lnrho=T
+/
+&grav_run_pars
+/
+&forcing_run_pars
+  iforce='helical', force=.004, relhel=1.
+  iforce_profile='surface_z', r_ff=-0.1, width_ff=0.04
+/
+&entropy_run_pars
+  lupw_ss=T
+  lcooling_general=T, cooltype='two-layer', cooling_profile='two-layer'
+  zcool=0., cs2cool=10., wcool=0.04, cool=0.5
+  zcool2=-100, cs2cool2=1, wcool2=0.04, cool2=0.5
+/
+&magnetic_run_pars
+  eta=1e-4
+/
+&viscosity_run_pars
+  nu=5e-4
+/
