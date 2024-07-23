@@ -1,0 +1,29 @@
+!                                  -*-f90-*-
+! Initialisation parameters
+!
+&init_pars
+  xyz_units = 'pi', 'pi', 'pi'
+  xyz0 = -6., -1.5, -0.9  !-9Lz/10 is bottom
+  Lxyz = 12., 3., 1.0
+  lperi=T,T,F
+  bcz = 's','s','a','a2','cT'  !,'a','a','s'
+  lnoghost_strati=T
+/
+&eos_init_pars
+ !gamma=1.
+/
+&hydro_init_pars
+/
+&density_init_pars
+  !initlnrho='isothermal'
+  initlnrho='stratification'
+/
+&grav_init_pars
+  gravz_profile='const', gravz=-1.
+  !gravz_profile='const', gravz=-0.5
+/
+!&magnetic_init_pars
+  !initaa='gaussian-noise', amplaa=1e-5
+!/
+&entropy_init_pars
+/
