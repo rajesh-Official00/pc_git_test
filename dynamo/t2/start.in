@@ -1,0 +1,24 @@
+!                                  -*-f90-*-
+! Initialisation parameters
+!
+&init_pars
+  cvsid=""
+  lperi=T,T,F
+  bcz = 's','s','a','hs','a','a','s'
+  xyz0 = -3.14159, -3.14159, -3.14159
+  Lxyz = 6.28319, 6.28319, 6.28319
+/
+&eos_init_pars
+  gamma=1.
+/
+&hydro_init_pars
+/
+&density_init_pars
+  initlnrho='isothermal'
+/
+&grav_init_pars
+  gravz_profile='const', gravz=-1.2
+/
+&magnetic_init_pars
+  initaa='gaussian-noise', amplaa=1e-5
+/
