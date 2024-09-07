@@ -1,0 +1,6 @@
+Revision: 1f4b34cd0
+ M bin/gitci_run
+ M samples/2d-tests/globaldisc/phiaver.in
+ M samples/backwards-compatible/data/proc0/grid.dat
+ M samples/helical-MHDturb/idl/generate_kvectors.pro
+ M samples/helical-MHDturb/k.dat
