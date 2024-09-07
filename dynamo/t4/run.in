@@ -1,0 +1,36 @@
+&run_pars
+  !tmax=5000., it1=20, cdt=0.6, isave=100, itorder=3
+  nt=1000000, it1=25, cdt=0.6, isave=100, itorder=3
+  dsnap=50., dvid=500000., d2davg=1., it1d=100
+  dspec=5., ou_spec=T, ab_spec=T, xy_spec='uz,bz'
+  oned=T
+  !max_walltime=86100	!24hrs
+  max_walltime=43000	!12hrs
+/
+&eos_run_pars
+/
+&hydro_run_pars
+  lupw_uu=T
+/
+&power_spectrum_run_pars
+  czrange='64'
+  ckxrange='0:65'
+  ckyrange='0:65'
+  lintegrate_z=F
+  lintegrate_shell=F
+  lcomplex=T
+/
+&density_run_pars
+  lupw_lnrho=T
+/
+&grav_run_pars
+/
+&forcing_run_pars
+  iforce='helical', force=.03, relhel=1.
+/
+&magnetic_run_pars
+  eta=5e-3
+/
+&viscosity_run_pars
+  nu=5e-3
+/
