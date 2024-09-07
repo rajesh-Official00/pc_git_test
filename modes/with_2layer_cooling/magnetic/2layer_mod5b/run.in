@@ -1,0 +1,51 @@
+q&run_pars
+  tmax=20000., it1=100, cdt=0.6, isave=100, itorder=3
+  !nt=100000000, it1=40, cdt=0.6, isave=100, itorder=3
+  dsnap=500., dvid=0.4, it1d=200, d2davg=0.05
+  dspec=0.005, xy_spec='uz'
+  !dspec=2., vel_spec=T, ab_spec=T, ou_spec=T
+  slice_position='c', zbot_slice=-2., ztop_slice=0.
+  max_walltime=172500. !48h
+  !max_walltime=43000. !12h
+  !max_walltime=21600.  !6h
+/
+&eos_run_pars
+/
+&hydro_run_pars
+  lupw_uu=T
+/
+&density_run_pars
+  lupw_lnrho=T
+/
+&grav_run_pars
+/
+!&power_spectrum_run_pars
+!  czrange='229'
+!  ckxrange='0:65'
+!  lintegrate_z=F
+!  lintegrate_shell=F
+!  lcomplex=T
+!/
+&forcing_run_pars
+  !iforce='helical', force=.01, relhel=1.
+  iforce='helical', force=.05, relhel=1.
+  !lmomentum_ff=T
+  iforce_profile='surface_z', r_ff=0., width_ff=0.05
+/
+&entropy_run_pars
+  lupw_ss=T
+  lcooling_general=T, cooltype='two-layer', cooling_profile='two-layer'
+  zcool=0., cs2cool=15., wcool=0.03, cool=0.45
+  zcool2=-100, cs2cool2=1, wcool2=0.03, cool2=0.25
+  iheatcond='chit'
+  lchit_fluct=T
+  chi_t1=1e-3
+  lcalc_ssmean=T
+  zz1_fluct=-3., zz2_fluct=1. 
+/
+&magnetic_run_pars
+  eta=5e-4
+/
+&viscosity_run_pars
+  nu=1e-3
+/
